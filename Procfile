@@ -1,1 +1,1 @@
-web: celery worker -A main -l info -B
+worker: celery worker -A main -l info -B
