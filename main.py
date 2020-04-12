@@ -4,10 +4,9 @@ from datetime import datetime
 import funcs
 import lessons
 import os
-import redis
 
 
-url = os.environ.get('REDISC_URL')
+url = os.environ.get('REDIS_URL')
 
 
 app = celery.Celery('main', broker=url)
@@ -30,17 +29,17 @@ app.conf.beat_schedule = {
     },
     '13.00': {
         'task': 'main.task',
-        'schedule': crontab(hour=13),
+        'schedule': crontab(hour=13, minute=1),
         'args': (r'18\30975', '123456')
     },
     '14.30': {
         'task': 'main.task',
-        'schedule': crontab(hour=14, minute=30),
+        'schedule': crontab(hour=14, minute=31),
         'args': (r'18\30975', '123456')
     },
     '16.00': {
         'task': 'main.task',
-        'schedule': crontab(hour=16),
+        'schedule': crontab(hour=16, minute=2),
         'args': (r'18\30975', '123456')
     }
 }
