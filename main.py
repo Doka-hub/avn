@@ -3,8 +3,12 @@ from celery.schedules import crontab
 from datetime import datetime
 import funcs
 import lessons
+import os
+import redis
 
-app = celery.Celery('main', broker='redis://redis-11428.c59.eu-west-1-2.ec2.cloud.redislabs.com:11428')
+
+url = redis.from_url(os.environ.get("REDIS_URL"))
+app = celery.Celery('main', broker=url)
 app.conf.timezone = 'Asia/Bishkek'
 app.conf.beat_schedule = {
     '08.00': {
