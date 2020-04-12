@@ -7,7 +7,7 @@ import os
 import redis
 
 
-url = os.environ.get('REDISCLOUD_URL')
+url = os.environ.get('REDISC_URL')
 
 
 app = celery.Celery('main', broker=url)
