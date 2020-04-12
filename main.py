@@ -8,7 +8,7 @@ import redis
 
 
 url = os.environ.get("REDIS_URL")
-app = celery.Celery('main', broker=url)
+app = celery.Celery('main', broker='redis://' + url + '/0')
 app.conf.timezone = 'Asia/Bishkek'
 app.conf.beat_schedule = {
     '08.00': {
