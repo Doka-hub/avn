@@ -4,7 +4,7 @@ from datetime import datetime
 import funcs
 import lessons
 
-app = celery.Celery('main', broker='redis://localhost:6379/0', backend='redis://localhost:6379/0')
+app = celery.Celery('main', broker='redis://redis-11428.c59.eu-west-1-2.ec2.cloud.redislabs.com:11428')
 app.conf.timezone = 'Asia/Bishkek'
 app.conf.beat_schedule = {
     '08.00': {
