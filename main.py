@@ -7,7 +7,7 @@ import os
 import redis
 
 # print(redis.from_url(os.environ.get("REDIS_URL")))
-url = os.environ.get("REDIS_URL")
+url = os.environ
 print(url)
 # app = celery.Celery('main', broker='redis://' + url + '/0')
 # app.conf.timezone = 'Asia/Bishkek'
