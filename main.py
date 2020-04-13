@@ -4,6 +4,7 @@ from datetime import datetime
 import funcs
 import lessons
 import os
+import time
 
 
 url = os.environ.get('REDIS_URL')
@@ -48,5 +49,6 @@ app.conf.beat_schedule = {
 def task(login, password):
     day = int(datetime.today().strftime('%w'))
     if day in range(1, 6):
+        time.sleep(600)
         print(funcs.enter(login, password))
     print(datetime.now())
