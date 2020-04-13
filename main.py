@@ -51,4 +51,6 @@ def task(login, password):
     if day in range(1, 6):
         print(funcs.enter(login, password))
         time.sleep(600)
+        print(funcs.enter(login, password))
+        time.sleep(300)
         print(funcs.enter(login, password)
