@@ -49,6 +49,6 @@ app.conf.beat_schedule = {
 def task(login, password):
     day = int(datetime.today().strftime('%w'))
     if day in range(1, 6):
-        time.sleep(600)
         print(funcs.enter(login, password))
-    print(datetime.now())
+        time.sleep(600)
+        print(funcs.enter(login, password)
