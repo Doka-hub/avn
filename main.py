@@ -53,4 +53,4 @@ def task(login, password):
         time.sleep(600)
         print(funcs.enter(login, password))
         time.sleep(300)
-        print(funcs.enter(login, password)
+        print(funcs.enter(login, password))
